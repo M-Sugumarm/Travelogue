@@ -1,0 +1,597 @@
+/* ==========================================
+   TRIP DETAIL PAGE STYLES
+   ========================================== */
+
+.trip-page {
+    padding-top: 80px;
+}
+
+.trip-page.loading,
+.trip-page.error {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-state {
+    text-align: center;
+}
+
+.error-state h2 {
+    margin-bottom: 12px;
+}
+
+.error-state p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+/* Hero Gallery */
+.trip-hero {
+    padding: 20px;
+}
+
+.gallery {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-main {
+    position: relative;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent 50%);
+}
+
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.gallery-nav:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav.prev {
+    left: 20px;
+}
+
+.gallery-nav.next {
+    right: 20px;
+}
+
+.gallery-counter {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    z-index: 10;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.back-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.fav-btn.large {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.fav-btn.large:hover {
+    transform: scale(1.1);
+}
+
+.fav-btn.large.active {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.gallery-thumbs {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.gallery-thumbs .thumb {
+    flex: 1;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+.gallery-thumbs .thumb:hover {
+    opacity: 0.9;
+}
+
+.gallery-thumbs .thumb.active {
+    opacity: 1;
+    border-color: var(--primary);
+}
+
+/* Content Layout */
+.trip-content {
+    padding: 0 0 80px;
+}
+
+.trip-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+}
+
+/* Details Column */
+.trip-details .trip-header {
+    margin-bottom: 32px;
+}
+
+.trip-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 12px;
+}
+
+.trip-meta span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.trip-meta svg {
+    color: var(--primary);
+}
+
+.trip-details h1 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.trip-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.trip-rating .stars {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #fbbf24;
+    font-weight: 600;
+}
+
+.trip-rating .difficulty {
+    padding: 4px 12px;
+    background: rgba(255, 122, 89, 0.15);
+    color: var(--primary);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Sections */
+.trip-details .section {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.highlights-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text-secondary);
+}
+
+.highlights-list .icon {
+    color: #22c55e;
+    margin-top: 4px;
+}
+
+/* Itinerary */
+.itinerary {
+    position: relative;
+}
+
+.itinerary-day {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 24px;
+}
+
+.day-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day-num {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.day-line {
+    width: 2px;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 8px;
+}
+
+.itinerary-day:last-child .day-line {
+    display: none;
+}
+
+.day-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.day-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.day-content .activities {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.day-content .activities li {
+    position: relative;
+    padding-left: 16px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.day-content .activities li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+/* Inclusions */
+.inclusions .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.inclusions h3 {
+    font-size: 1rem;
+    margin-bottom: 16px;
+}
+
+.included-list,
+.not-included-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.included-list li,
+.not-included-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.icon.success {
+    color: #22c55e;
+}
+
+.icon.danger {
+    color: #ef4444;
+}
+
+/* Sidebar - Booking Card */
+.trip-sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.booking-card {
+    background: var(--gradient-glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 28px;
+}
+
+.booking-card .price {
+    margin-bottom: 20px;
+}
+
+.booking-card .price .amount {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.booking-card .price .per {
+    color: var(--text-secondary);
+}
+
+.booking-card .availability {
+    margin-bottom: 24px;
+}
+
+.booking-card .available {
+    color: #22c55e;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.booking-card .sold-out {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.spots-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.spots-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.booking-card .dates {
+    margin-bottom: 24px;
+}
+
+.booking-card .dates h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    color: var(--text-secondary);
+}
+
+.date-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.date-chip {
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+.date-chip.more {
+    color: var(--primary);
+}
+
+.book-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+}
+
+.guarantees {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.guarantee {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.guarantee svg {
+    color: #22c55e;
+}
+
+/* Similar Trips */
+.similar-section {
+    padding: 60px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.similar-section h2 {
+    margin-bottom: 32px;
+}
+
+.similar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.similar-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.similar-card:hover {
+    transform: translateY(-8px);
+}
+
+.similar-image {
+    position: relative;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+}
+
+.similar-price {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.similar-info {
+    padding: 16px;
+    background: var(--bg-glass);
+}
+
+.similar-info h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.similar-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .trip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trip-sidebar {
+        position: static;
+        order: -1;
+    }
+
+    .similar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-main {
+        height: 350px;
+    }
+
+    .trip-details h1 {
+        font-size: 1.75rem;
+    }
+
+    .highlights-list {
+        grid-template-columns: 1fr;
+    }
+
+    .inclusions .row {
+        grid-template-columns: 1fr;
+    }
+
+    .similar-grid {
+        grid-template-columns: 1fr;
+    }
+}

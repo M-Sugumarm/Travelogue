@@ -1,0 +1,627 @@
+/* ==========================================
+   BOOKING MODAL STYLES
+   ========================================== */
+
+.booking-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    padding: 20px;
+}
+
+.booking-modal {
+    background: linear-gradient(180deg, #0f172a, #0a1628);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.booking-modal .close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 50%;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.booking-header {
+    padding: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.trip-preview {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.trip-preview img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.trip-preview h3 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.trip-preview p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Progress Steps */
+.booking-steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.booking-steps .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.booking-steps .step.active {
+    color: var(--text-primary);
+}
+
+.booking-steps .step.completed {
+    color: #22c55e;
+}
+
+.step-num {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.step.active .step-num {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.step.completed .step-num {
+    background: #22c55e;
+    color: white;
+}
+
+/* Form */
+.booking-form {
+    padding: 28px;
+}
+
+.booking-form .error-banner {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.form-step h4 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 20px;
+    font-size: 1rem;
+}
+
+.form-step h4:not(:first-of-type) {
+    margin-top: 28px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.1);
+}
+
+/* Option Cards */
+.option-cards {
+    display: flex;
+    gap: 12px;
+}
+
+.option-card {
+    flex: 1;
+    position: relative;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.option-card.selected {
+    border-color: var(--primary);
+    background: rgba(255, 122, 89, 0.05);
+}
+
+.option-card input {
+    position: absolute;
+    opacity: 0;
+}
+
+.option-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.option-content strong {
+    font-size: 0.95rem;
+}
+
+.option-content span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.option-content .multiplier {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Checkbox Options */
+.checkbox-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.checkbox-option:has(input:checked) {
+    border-color: var(--primary);
+    background: rgba(255, 122, 89, 0.05);
+}
+
+.checkbox-option input {
+    margin-top: 4px;
+    accent-color: var(--primary);
+}
+
+.checkbox-content {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.checkbox-content svg {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 2px;
+}
+
+.checkbox-content strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.checkbox-content span {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Price Summary */
+.price-summary {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.price-row.total {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 12px;
+    padding-top: 16px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.payment-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #22c55e;
+    font-size: 0.85rem;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.form-actions .btn-secondary {
+    flex: 1;
+}
+
+.form-actions .btn-primary {
+    flex: 2;
+}
+
+.form-actions .submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Review Section Styles */
+.review-section {
+    margin-top: 40px;
+}
+
+.review-section .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.rating-summary {
+    display: flex;
+    gap: 40px;
+    padding: 24px;
+    background: var(--bg-glass);
+    border-radius: 16px;
+    margin-bottom: 32px;
+}
+
+.rating-big {
+    text-align: center;
+    min-width: 120px;
+}
+
+.rating-number {
+    font-size: 3rem;
+    font-weight: 700;
+    display: block;
+}
+
+.rating-stars {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin: 8px 0;
+}
+
+.rating-stars .star {
+    color: var(--text-muted);
+}
+
+.rating-stars .star.filled {
+    color: #fbbf24;
+}
+
+.rating-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.rating-bars {
+    flex: 1;
+}
+
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.bar-row .bar {
+    flex: 1;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: #fbbf24;
+    border-radius: 4px;
+}
+
+/* Review Form */
+.review-form {
+    background: var(--bg-glass);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.review-form h4 {
+    margin-bottom: 20px;
+}
+
+.star-picker {
+    margin-bottom: 20px;
+}
+
+.star-picker label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.star-picker .stars {
+    display: flex;
+    gap: 4px;
+}
+
+.star-picker .stars button {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 4px;
+    transition: transform 0.2s ease;
+}
+
+.star-picker .stars button:hover {
+    transform: scale(1.2);
+}
+
+.star-picker .stars button.filled {
+    color: #fbbf24;
+}
+
+/* Reviews List */
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.no-reviews {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 40px;
+}
+
+.review-card {
+    background: var(--bg-glass);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.reviewer {
+    display: flex;
+    gap: 12px;
+}
+
+.reviewer .avatar {
+    width: 44px;
+    height: 44px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: white;
+}
+
+.reviewer strong {
+    display: block;
+}
+
+.reviewer .date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.review-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.review-rating .star {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.review-rating .star.filled {
+    color: #fbbf24;
+}
+
+.review-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.review-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.review-footer {
+    display: flex;
+    gap: 16px;
+}
+
+.helpful-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.helpful-btn:hover {
+    color: var(--text-secondary);
+}
+
+.show-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 16px;
+}
+
+.show-more:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.show-more .rotate {
+    transform: rotate(180deg);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .booking-steps {
+        gap: 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .option-cards {
+        flex-direction: column;
+    }
+
+    .rating-summary {
+        flex-direction: column;
+        gap: 24px;
+    }
+}

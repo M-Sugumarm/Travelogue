@@ -1,0 +1,239 @@
+.payment-success-overlay {
+    animation: fadeIn 0.5s ease-out;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 1rem;
+}
+
+/* Success Icon Animation */
+.success-icon-container {
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.success-icon-circle {
+    width: 80px;
+    height: 80px;
+    background: #10b981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-icon-circle svg {
+    color: white;
+    font-size: 2.5rem;
+}
+
+/* Ticket Card Design */
+.ticket-card {
+    background: white;
+    color: #1e293b;
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 380px;
+    margin: 0 auto 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transform-origin: top;
+    animation: ticketSlideDown 0.8s ease-out 0.2s backwards;
+}
+
+.ticket-header {
+    background: linear-gradient(135deg, #FF7A59 0%, #ff9f85 100%);
+    padding: 1.5rem;
+    position: relative;
+    color: white;
+    text-align: left;
+}
+
+.ticket-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ticket-header p {
+    margin: 4px 0 0;
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+.ticket-body {
+    padding: 1.5rem;
+    position: relative;
+}
+
+/* Perforation Effect */
+.ticket-body::before,
+.ticket-body::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background: #0f1724;
+    /* Should match modal background */
+    border-radius: 50%;
+}
+
+.ticket-body::before {
+    left: -10px;
+}
+
+.ticket-body::after {
+    right: -10px;
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.ticket-label {
+    color: #64748b;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.ticket-value {
+    color: #0f1724;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.ticket-divider {
+    border-top: 2px dashed #e2e8f0;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.booking-id-container {
+    background: #f1f5f9;
+    padding: 0.8rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.booking-id-container:hover {
+    background: #e2e8f0;
+}
+
+.booking-id-text {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #334155;
+}
+
+.copy-icon {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f2d74e;
+    animation: confetti-fall linear forwards;
+}
+
+/* Keyframes */
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes ticketSlideDown {
+    0% {
+        transform: translateY(-50px) rotateX(-20deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) rotateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Action Buttons */
+.success-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn-download {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.btn-download:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-finish {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    transition: all 0.2s;
+}
+
+.btn-finish:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}

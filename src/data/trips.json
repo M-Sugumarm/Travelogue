@@ -5,14 +5,22 @@
     "location": "Amsterdam, Netherlands",
     "duration": "2 days",
     "budget": "€220",
-    "tags": ["city","bike","coffee"],
+    "tags": [
+      "city",
+      "bike",
+      "coffee"
+    ],
     "image": "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?q=80&w=1600&auto=format&fit=crop",
     "summary": "Cycle along canals, visit museums, and enjoy cozy cafés.",
     "itinerary": [
       "Day 1: Canal cruise, Van Gogh museum, evening at Jordaan",
       "Day 2: Rent a bike, Vondelpark picnic, local markets"
     ],
-    "highlights": ["Canal cruise","Van Gogh","Bike routes"]
+    "highlights": [
+      "Canal cruise",
+      "Van Gogh",
+      "Bike routes"
+    ]
   },
   {
     "id": "t2",
@@ -20,7 +28,11 @@
     "location": "Santorini, Greece",
     "duration": "3 days",
     "budget": "€450",
-    "tags": ["island","sunset","views"],
+    "tags": [
+      "island",
+      "sunset",
+      "views"
+    ],
     "image": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1600&auto=format&fit=crop",
     "summary": "Experience the magic of Santorini's famous sunsets and white-washed villages.",
     "itinerary": [
@@ -28,7 +40,11 @@
       "Day 2: Caldera cruise and wine tasting",
       "Day 3: Beach day and sunset dinner"
     ],
-    "highlights": ["Sunset views","Wine tasting","Island cruise"]
+    "highlights": [
+      "Sunset views",
+      "Wine tasting",
+      "Island cruise"
+    ]
   },
   {
     "id": "t3",
@@ -36,7 +52,11 @@
     "location": "Kyoto, Japan",
     "duration": "4 days",
     "budget": "¥85,000",
-    "tags": ["culture","temples","gardens"],
+    "tags": [
+      "culture",
+      "temples",
+      "gardens"
+    ],
     "image": "https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=1600&auto=format&fit=crop",
     "summary": "Discover ancient temples, traditional gardens, and authentic tea ceremonies.",
     "itinerary": [
@@ -45,7 +65,11 @@
       "Day 3: Cooking class and market visit",
       "Day 4: Garden tour and meditation"
     ],
-    "highlights": ["Tea ceremony","Temple visit","Bamboo grove"]
+    "highlights": [
+      "Tea ceremony",
+      "Temple visit",
+      "Bamboo grove"
+    ]
   },
   {
     "id": "t4",
@@ -53,7 +77,11 @@
     "location": "Cusco, Peru",
     "duration": "5 days",
     "budget": "$650",
-    "tags": ["hiking","history","adventure"],
+    "tags": [
+      "hiking",
+      "history",
+      "adventure"
+    ],
     "image": "https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=80&w=1600&auto=format&fit=crop",
     "summary": "Trek the ancient Inca Trail to the magnificent Machu Picchu.",
     "itinerary": [
@@ -61,7 +89,11 @@
       "Day 2-4: Inca Trail trek",
       "Day 5: Machu Picchu sunrise tour"
     ],
-    "highlights": ["Inca Trail","Mountain views","Ancient ruins"]
+    "highlights": [
+      "Inca Trail",
+      "Mountain views",
+      "Ancient ruins"
+    ]
   },
   {
     "id": "t5",
@@ -69,7 +101,11 @@
     "location": "Serengeti, Tanzania",
     "duration": "4 days",
     "budget": "$1,200",
-    "tags": ["wildlife","safari","nature"],
+    "tags": [
+      "wildlife",
+      "safari",
+      "nature"
+    ],
     "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?q=80&w=1600&auto=format&fit=crop",
     "summary": "Witness the great migration and spot the Big Five in their natural habitat.",
     "itinerary": [
@@ -77,7 +113,11 @@
       "Day 2-3: Full day safaris",
       "Day 4: Morning drive and departure"
     ],
-    "highlights": ["Big Five","Great Migration","Sunset drives"]
+    "highlights": [
+      "Big Five",
+      "Great Migration",
+      "Sunset drives"
+    ]
   },
   {
     "id": "t6",
@@ -85,7 +125,11 @@
     "location": "Reykjavik, Iceland",
     "duration": "3 days",
     "budget": "€580",
-    "tags": ["aurora","nature","winter"],
+    "tags": [
+      "aurora",
+      "nature",
+      "winter"
+    ],
     "image": "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?q=80&w=1600&auto=format&fit=crop",
     "summary": "Chase the aurora borealis and explore Iceland's winter wonderland.",
     "itinerary": [
@@ -93,7 +137,11 @@
       "Day 2: Golden Circle tour",
       "Day 3: Northern Lights hunt"
     ],
-    "highlights": ["Aurora viewing","Hot springs","Ice caves"]
+    "highlights": [
+      "Aurora viewing",
+      "Hot springs",
+      "Ice caves"
+    ]
   },
   {
     "id": "t7",
@@ -101,7 +149,11 @@
     "location": "Male, Maldives",
     "duration": "5 days",
     "budget": "$1,800",
-    "tags": ["beach","luxury","relaxation"],
+    "tags": [
+      "beach",
+      "luxury",
+      "relaxation"
+    ],
     "image": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?q=80&w=1600&auto=format&fit=crop",
     "summary": "Unwind in overwater villas and explore vibrant coral reefs.",
     "itinerary": [
@@ -109,7 +161,11 @@
       "Day 2-4: Beach time and water activities",
       "Day 5: Sunset cruise"
     ],
-    "highlights": ["Overwater villa","Snorkeling","Spa treatments"]
+    "highlights": [
+      "Overwater villa",
+      "Snorkeling",
+      "Spa treatments"
+    ]
   },
   {
     "id": "t8",
@@ -117,7 +173,11 @@
     "location": "Hanoi, Vietnam",
     "duration": "4 days",
     "budget": "$320",
-    "tags": ["food","culture","street-food"],
+    "tags": [
+      "food",
+      "culture",
+      "street-food"
+    ],
     "image": "https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=1600&auto=format&fit=crop",
     "summary": "Taste your way through Vietnam's incredible street food scene.",
     "itinerary": [
@@ -126,7 +186,11 @@
       "Day 3: Market visit and food trek",
       "Day 4: Pho making workshop"
     ],
-    "highlights": ["Street food","Cooking class","Market tours"]
+    "highlights": [
+      "Street food",
+      "Cooking class",
+      "Market tours"
+    ]
   },
   {
     "id": "t9",
@@ -134,7 +198,11 @@
     "location": "Florence, Italy",
     "duration": "3 days",
     "budget": "€490",
-    "tags": ["wine","countryside","food"],
+    "tags": [
+      "wine",
+      "countryside",
+      "food"
+    ],
     "image": "https://images.unsplash.com/photo-1467803738586-46b7eb7b16a1?q=80&w=1600&auto=format&fit=crop",
     "summary": "Sample finest wines and explore the rolling hills of Tuscany.",
     "itinerary": [
@@ -142,7 +210,11 @@
       "Day 2: Wine tasting and cooking",
       "Day 3: Val d'Orcia exploration"
     ],
-    "highlights": ["Wine tasting","Vineyard tours","Local cuisine"]
+    "highlights": [
+      "Wine tasting",
+      "Vineyard tours",
+      "Local cuisine"
+    ]
   },
   {
     "id": "t10",
@@ -150,7 +222,11 @@
     "location": "Cairns, Australia",
     "duration": "3 days",
     "budget": "AU$750",
-    "tags": ["diving","marine","adventure"],
+    "tags": [
+      "diving",
+      "marine",
+      "adventure"
+    ],
     "image": "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?q=80&w=1600&auto=format&fit=crop",
     "summary": "Discover the underwater wonders of the Great Barrier Reef.",
     "itinerary": [
@@ -158,7 +234,11 @@
       "Day 2: Reef diving",
       "Day 3: Marine life expedition"
     ],
-    "highlights": ["Coral reefs","Marine life","Scuba diving"]
+    "highlights": [
+      "Coral reefs",
+      "Marine life",
+      "Scuba diving"
+    ]
   },
   {
     "id": "t11",
@@ -166,8 +246,12 @@
     "location": "Marrakech, Morocco",
     "duration": "4 days",
     "budget": "€420",
-    "tags": ["desert","culture","adventure"],
-    "image": "https://images.unsplash.com/photo-1548768041-cc509d876835?q=80&w=1600&auto=format&fit=crop",
+    "tags": [
+      "desert",
+      "culture",
+      "adventure"
+    ],
+    "image": "/morocco_desert.jpg",
     "summary": "Journey through the Sahara on camelback and sleep under the stars.",
     "itinerary": [
       "Day 1: Marrakech exploration",
@@ -175,7 +259,11 @@
       "Day 3: Desert camp",
       "Day 4: Sunrise camel trek"
     ],
-    "highlights": ["Camel trek","Desert camping","Stargazing"]
+    "highlights": [
+      "Camel trek",
+      "Desert camping",
+      "Stargazing"
+    ]
   },
   {
     "id": "t12",
@@ -183,7 +271,11 @@
     "location": "Zermatt, Switzerland",
     "duration": "4 days",
     "budget": "CHF 890",
-    "tags": ["hiking","mountains","nature"],
+    "tags": [
+      "hiking",
+      "mountains",
+      "nature"
+    ],
     "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop",
     "summary": "Trek through stunning Alpine landscapes with Matterhorn views.",
     "itinerary": [
@@ -192,6 +284,10 @@
       "Day 3: Five Lakes walk",
       "Day 4: Glacier Paradise visit"
     ],
-    "highlights": ["Mountain views","Alpine lakes","Glacier visit"]
+    "highlights": [
+      "Mountain views",
+      "Alpine lakes",
+      "Glacier visit"
+    ]
   }
 ]

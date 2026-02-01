@@ -1,22 +1,103 @@
-import React from 'react'
-import clsx from 'clsx'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaStar, FaHeart, FaRegHeart, FaClock, FaMapMarkerAlt, FaUsers, FaArrowRight } from 'react-icons/fa';
 
-export default function Card({trip, onOpen, favored, onToggleFav}){
+export default function Card({ trip, onOpen, favored, onToggleFav }) {
+  const {
+    tripId,
+    id,
+    title,
+    location,
+    duration,
+    budget,
+    price,
+    image,
+    summary,
+    rating = 4.5,
+    reviewCount = 0,
+    spotsAvailable,
+    tags = []
+  } = trip;
+
+  const displayPrice = budget || `₹${price?.toLocaleString('en-IN')}`;
+  const identifier = tripId || id;
+
+  const handleFavorite = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onToggleFav?.();
+  };
+
   return (
-    <article className={clsx('trip-card', favored && 'favored')}>
-      <div className="media" style={{backgroundImage:`url(${trip.image})`}} onClick={onOpen} role="button" tabIndex={0} onKeyDown={(e)=>{ if(e.key==='Enter') onOpen() }} aria-label={`Open ${trip.title}`}></div>
-      <div className="content">
-        <h3>{trip.title}</h3>
-        <p className="meta">{trip.location} • {trip.duration} • {trip.budget}</p>
-        <p className="summary">{trip.summary}</p>
-        <div className="row">
-          <div className="tags">{trip.tags.map(t=> <span key={t} className="tag">{t}</span>)}</div>
-          <div className="actions">
-            <button className="btn" onClick={onOpen}>View</button>
-            <button className={clsx('icon-btn','fav')} onClick={onToggleFav} aria-pressed={favored}>{favored? '★' : '☆'}</button>
-          </div>
+    <div className="trip-card" onClick={onOpen}>
+      {/* Image Section */}
+      <div
+        className="card-media"
+        style={{ backgroundImage: `url(${image})` }}
+      >
+        {/* Overlay */}
+        <div className="card-overlay" />
+
+        {/* Top badges */}
+        <div className="card-badges">
+          <span className="badge rating">
+            <FaStar /> {rating.toFixed(1)}
+          </span>
+          {spotsAvailable !== undefined && spotsAvailable <= 5 && (
+            <span className="badge spots">
+              {spotsAvailable} spots left
+            </span>
+          )}
+        </div>
+
+        {/* Favorite button */}
+        <button
+          className={`fav-btn ${favored ? 'active' : ''}`}
+          onClick={handleFavorite}
+        >
+          {favored ? <FaHeart /> : <FaRegHeart />}
+        </button>
+
+        {/* Price tag */}
+        <div className="card-price">
+          {displayPrice}
         </div>
       </div>
-    </article>
-  )
+
+      {/* Content Section */}
+      <div className="card-content">
+        <div className="card-meta">
+          <span><FaMapMarkerAlt /> {location}</span>
+          <span><FaClock /> {duration}</span>
+        </div>
+
+        <h3 className="card-title">{title}</h3>
+
+        <p className="card-summary">{summary}</p>
+
+        {/* Tags */}
+        {tags.length > 0 && (
+          <div className="card-tags">
+            {tags.slice(0, 3).map(tag => (
+              <span key={tag} className="tag">{tag}</span>
+            ))}
+            {tags.length > 3 && (
+              <span className="tag more">+{tags.length - 3}</span>
+            )}
+          </div>
+        )}
+
+        {/* Footer */}
+        <div className="card-footer">
+          <Link
+            to={`/trip/${identifier}`}
+            className="view-details"
+            onClick={e => e.stopPropagation()}
+          >
+            View Details <FaArrowRight />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }

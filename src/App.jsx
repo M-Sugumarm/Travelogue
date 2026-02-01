@@ -10,17 +10,20 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Trip from './pages/Trip'
 import SplashPage from './pages/SplashPage'
+import MyBookings from './pages/MyBookings'
+import AdminPanel from './pages/AdminPanel'
+import ToastContainer from './components/ToastContainer'
 
-export default function App(){
+export default function App() {
   const navigate = useNavigate()
   const location = useLocation()
 
-  useEffect(()=>{
+  useEffect(() => {
     // On first app load, if the user hasn't seen the splash this session,
     // navigate to /splash before showing home. If user already on another
     // route or /splash, don't redirect.
     const seen = sessionStorage.getItem('seenSplash')
-    if(!seen && location.pathname !== '/splash'){
+    if (!seen && location.pathname !== '/splash') {
       navigate('/splash', { replace: true })
     }
   }, [location.pathname, navigate])
@@ -36,13 +39,16 @@ export default function App(){
           <Route path="/splash" element={<SplashPage />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/book" element={<Book />} />
-          <Route path="/trip/:id" element={<Trip />} />
+          <Route path="/trip/:tripId" element={<Trip />} />
+          <Route path="/my-bookings" element={<MyBookings />} />
+          <Route path="/admin" element={<AdminPanel />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       {!hideShell && <Footer />}
+      <ToastContainer />
     </div>
   )
 }
