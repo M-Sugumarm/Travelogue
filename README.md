@@ -12,3 +12,5 @@ A small React app built for the ProU Frontend assessment. It displays curated mi
 - react-router-dom
 - CSS for styling
 
+# Screenshots
+<img width="1886" height="895" alt="image" src="https://github.com/user-attachments/assets/08f656aa-7f02-4e92-842d-6371e8ef2c6a" />
